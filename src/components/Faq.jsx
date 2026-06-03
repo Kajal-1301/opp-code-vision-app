@@ -4,7 +4,7 @@ import { playfair } from "../lib/fonts";
 import { useState } from "react";
 import { FaPlus } from "react-icons/fa";
 import { ImCross } from "react-icons/im";
-import { faqs } from "../../data/data";
+import { faqs } from "../data/data";
 
 export default function Faq() {
   const [open, setOpen] = useState(0);

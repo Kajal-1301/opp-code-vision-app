@@ -2,17 +2,12 @@
 
 import { playfair } from "../lib/fonts";
 import { FaRocket, FaPhoneAlt, FaChevronDown } from "react-icons/fa";
-// import { Playfair_Display } from "next/font/google";
 import BackgroundCircles from "./BackgroundCircles";
 import { TypeAnimation } from "react-type-animation";
-
-// const playfair = Playfair_Display({ subsets: ["latin"], weight: "700" });
 
 const Hero = () => {
   return (
     <>
-
-
       <section
         id="home"
         className="relative min-h-screen bg-black flex items-center
