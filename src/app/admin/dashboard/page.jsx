@@ -3,6 +3,7 @@
 import { useState } from "react";
 import ProjectsTab from "./ProjectsTab";
 import MessagesTab from "./MessagesTab";
+import TestimonialsTab from "./TestimonialsTab";
 
 export default function AdminDashboard() {
   const [activeTab, setActiveTab] = useState("projects");
@@ -28,30 +29,24 @@ export default function AdminDashboard() {
 
       {/* Tabs */}
       <div className="flex gap-3 mb-8">
-        <button
-          onClick={() => setActiveTab("projects")}
-          className={`px-5 py-2 rounded-lg font-medium text-sm transition-all
-            ${activeTab === "projects"
-              ? "bg-yellow-500 text-black"
-              : "bg-zinc-800 text-white"
-            }`}
-        >
-          Projects
-        </button>
-        <button
-          onClick={() => setActiveTab("messages")}
-          className={`px-5 py-2 rounded-lg font-medium text-sm transition-all
-            ${activeTab === "messages"
-              ? "bg-yellow-500 text-black"
-              : "bg-zinc-800 text-white"
-            }`}
-        >
-          Messages
-        </button>
+        {["projects", "testimonials", "messages"].map((tab) => (
+          <button
+            key={tab}
+            onClick={() => setActiveTab(tab)}
+            className={`px-5 py-2 rounded-lg font-medium text-sm capitalize transition-all
+              ${activeTab === tab
+                ? "bg-yellow-500 text-black"
+                : "bg-zinc-800 text-white"
+              }`}
+          >
+            {tab}
+          </button>
+        ))}
       </div>
 
       {/* Tab Content */}
       {activeTab === "projects" && <ProjectsTab />}
+      {activeTab === "testimonials" && <TestimonialsTab />}
       {activeTab === "messages" && <MessagesTab />}
 
     </div>
